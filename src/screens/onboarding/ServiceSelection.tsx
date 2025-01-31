@@ -4,6 +4,7 @@ import texts from '../../constant/text';
 import HeadingText from '../../components/HeadingText';
 import ImageCard from '../../components/ImageCard';
 import AppButton from '../../components/AppButton';
+import SubHeadingText from '../../components/SubHeadingText';
 
 interface ImageData{
     src:string,
@@ -31,7 +32,7 @@ const ServiceSelection = () => {
   return (
     <SafeAreaView style={styles.container}>
       <HeadingText />
-      <Text style={styles.title}>{texts.selectService}</Text>
+      <SubHeadingText title={texts.selectService}/>
       <View style={styles.serviceImageContainer}>
         <View style={styles.imageSubSection}>
           {images.map((image)=><ImageCard source={image.src} text={image.name}/>)}
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'space-between',
   },
-  title: {fontWeight: '400', fontSize: 24, alignSelf: 'center'},
+  
   serviceImageContainer: {
     height: '50%',
     paddingHorizontal: '10%',
