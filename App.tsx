@@ -1,7 +1,9 @@
 
 import React from 'react';
-import { SafeAreaView,StyleSheet,Text, } from 'react-native';
-import Onboarding from './src/screens/onboarding';
+
+
+import { SafeAreaView, Text } from 'react-native';
+import Onboarding from './src/screens/Onboarding';
 
 function App(): React.JSX.Element {
   
