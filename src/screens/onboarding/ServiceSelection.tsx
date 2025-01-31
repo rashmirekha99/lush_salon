@@ -5,6 +5,28 @@ import HeadingText from '../../components/HeadingText';
 import ImageCard from '../../components/ImageCard';
 import AppButton from '../../components/AppButton';
 
+interface ImageData{
+    src:string,
+    name:string,
+}
+
+const images:Array<ImageData>=[
+    {
+        src:require('../../../assets/img/nails.png'),
+        name:'Nail'
+    },{
+        src: require('../../../assets/img/eyebrow.png'),
+        name: 'Eyebrows'
+    },
+    {
+        src: require('../../../assets/img/massage.png'),
+        name: 'Massage'
+    },{
+        src: require('../../../assets/img/hair.png'),
+        name: 'Hair'
+    },
+]
+
 const ServiceSelection = () => {
   return (
     <SafeAreaView style={styles.container}>
@@ -12,22 +34,7 @@ const ServiceSelection = () => {
       <Text style={styles.title}>{texts.selectService}</Text>
       <View style={styles.serviceImageContainer}>
         <View style={styles.imageSubSection}>
-          <ImageCard
-            source={require('../../../assets/img/nails.png')}
-            text={'Nail'}
-          />
-          <ImageCard
-            source={require('../../../assets/img/eyebrow.png')}
-            text={'Eyebrows'}
-          />
-          <ImageCard
-            source={require('../../../assets/img/massage.png')}
-            text={'Massage'}
-          />
-          <ImageCard
-            source={require('../../../assets/img/hair.png')}
-            text={'Hair'}
-          />
+          {images.map((image)=><ImageCard source={image.src} text={image.name}/>)}
         </View>
 
         <AppButton title={'Skip'} active={true} />
