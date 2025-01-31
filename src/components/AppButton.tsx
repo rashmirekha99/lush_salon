@@ -1,15 +1,18 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import colors from '../constant/colors';
 
 type ButtonProps = {
-  title: String;
-  active: Boolean;
+  title: string;
+  active: boolean;
+  onpress?:()=>void;
 };
 
 const AppButton = (props: ButtonProps) => {
   return (
-    <View
+   
+    <TouchableOpacity
+    activeOpacity={0.8}
       style={[
         styles.buttonStyle,
         {backgroundColor: props.active ? colors.primary : colors.white},
@@ -21,7 +24,7 @@ const AppButton = (props: ButtonProps) => {
         ]}>
         {props.title}
       </Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -31,7 +34,7 @@ const styles = StyleSheet.create({
   buttonStyle: {
     borderRadius: 10,
     paddingVertical: 10,
-    flex: 1,
+    
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',

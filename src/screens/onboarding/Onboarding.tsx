@@ -1,21 +1,22 @@
 import {StyleSheet, Text, SafeAreaView, Image, View} from 'react-native';
 import React from 'react';
-import colors from '../constant/colors';
-import AppButton from '../components/AppButton';
-import texts from '../constant/text';
+import colors from '../../constant/colors';
+import AppButton from '../../components/AppButton';
+import texts from '../../constant/text';
+import HeadingText from '../../components/HeadingText';
 
 const Onboarding = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>MeTime</Text>
+      <HeadingText/>
 
       <Image
         style={styles.backgroundImage}
-        source={require('../../assets/img/background.png')}
+        source={require('../../../assets/img/background.png')}
       />
       <Image
         style={styles.middleImage}
-        source={require('../../assets/img/woman.png')}
+        source={require('../../../assets/img/woman.png')}
       />
 
       <View style={styles.bottomSection}>
@@ -40,13 +41,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     
   },
-  title: {
-    fontWeight: '600',
-    fontSize: 25,
-    alignSelf: 'center',
-    marginTop: '3%',
-    color: 'black',
-  },
+  
   largeTitle: {
    
     fontSize: 32,

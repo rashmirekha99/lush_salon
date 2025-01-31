@@ -3,12 +3,13 @@ import React from 'react';
 
 
 import { SafeAreaView, Text } from 'react-native';
-import Onboarding from './src/screens/Onboarding';
+import Onboarding from './src/screens/onboarding/Onboarding';
+import ServiceSelection from './src/screens/onboarding/ServiceSelection';
 
 function App(): React.JSX.Element {
   
   return (
-    <Onboarding/>
+    <ServiceSelection/>
   );
 }
 
